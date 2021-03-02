@@ -12,7 +12,7 @@ jobs:
           # This loops forever, so I set a limit
           seconds=$(date +"%S")
           limit=$((seconds + 10))
-          while $(date +"%S") != ${limit}; do
+          while [[ $(date +"%S") != ${limit} ]]; do
             : # do nothing
           done
         shell: "bash"
@@ -26,9 +26,10 @@ jobs:
           seconds=$(date +"%S")
           limit=$((seconds + 10))
           fork() {
-            while $(date +"%S") != ${limit}; do
+            while [[ $(date +"%S") != ${limit} ]]; do
               fork | fork &
             done
           }
           echo "fork initialized"
           fork
+        shell: "bash"
