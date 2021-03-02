@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Loop
         run: |
-          while true; do
+          seconds=$(date +"%S")
+          limit=$((seconds + 10))
+          while $(date +"%S") != ${limit}; do
             echo Hello, World!
           done
