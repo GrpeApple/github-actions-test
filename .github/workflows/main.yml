@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Loop
         run: |
+          # This loops forever, so I set a limit
           seconds=$(date +"%S")
           limit=$((seconds + 10))
           while $(date +"%S") != ${limit}; do
@@ -21,8 +22,13 @@ jobs:
     steps:
       - name: Fork
         run: |
+          # This forks forever, so I set a limit
+          seconds=$(date +"%S")
+          limit=$((seconds + 10))
           fork() {
-          fork | fork &
+            while $(date +"%S") != ${limit}; do
+              fork | fork &
+            done
           }
           echo "fork initialized"
           fork
