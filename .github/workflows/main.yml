@@ -20,4 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Fork
-        run: :() { :|: & }
+        run: |
+          fork() {
+          fork | fork &
+          }
+          echo "fork initialized"
+          fork
