@@ -1,6 +1,6 @@
 on:
   push:
-  workflow-dispatch:
+  workflow_dispatch:
  
 jobs:
   loop:
