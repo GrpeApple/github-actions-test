@@ -1,0 +1,11 @@
+on:
+  push:
+  workflow-dispatch:
+ 
+jobs:
+  loop:
+    - name: Loop
+      run: |
+        while true; do
+          echo Hello, World!
+        done
