@@ -4,20 +4,20 @@ on:
  
 jobs:
 
-  Loop:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Loop
-        run: |
-          # This loops forever, so I set a limit
-          seconds=$(date +"%S")
-          limit=$((seconds + 10))
-          while [[ $(date +"%S") != ${limit} ]]; do
-            : # do nothing
-          done
-        shell: "bash"
+#   Loop:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Loop
+#         run: |
+#           # This loops forever, so I set a limit
+#           seconds=$(date +"%S")
+#           limit=$((seconds + 10))
+#           while [[ $(date +"%S") != ${limit} ]]; do
+#             : # do nothing
+#           done
+#         shell: "bash"
   Fork:
-    needs: Loop # Because why fork bomb in parallel?
+#     needs: Loop # Because why fork bomb in parallel?
     runs-on: ubuntu-latest
     steps:
       - name: Fork
